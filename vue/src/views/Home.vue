@@ -2,8 +2,6 @@
   <div class="home">
     <div id="flex">
       <h1 class="header">Welcome, {{ $store.state.user.username }}!</h1>
-      <h2 class="now-playing">Now Playing</h2>
-      <now-playing class="movieDetails" />
     </div>
   </div>
 </template>
@@ -45,19 +43,4 @@ export default {
   width: 400px;
 }
 
-.movieDetails {
-  display: flex;
-}
-
-.now-playing {
-  font-size: 30px;
-  background: #1b1b1b;
-  border-radius: 40px;
-  margin-top: 30px;
-  margin-bottom: 10px;
-  padding: 20px;
-  color: white;
-  text-align: center;
-  border: 5px solid white;
-}
 </style>

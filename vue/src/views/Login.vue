@@ -3,18 +3,6 @@
     <div class="name" id="name">
       <h1>Cookies by Kels</h1>
     </div>
-    <div id="site-info" class="site-info">
-      <div class="information" id="information">
-        <p id="description" class="description">
-          This project was created by Joseph Schilens, Alain Delgado, Nick
-          Harter and Sean Kunkemoeller as our final project for Tech Elevator.
-          Check out the latest movies from our database, favorite and select
-          movies to watch later. Credit to The Movie Database for providing our
-          movies and details.
-        </p>
-      </div>
-    </div>
-
     <div id="login" class="text-center">
       <form class="form-signin" @submit.prevent="login" id="flex">
         <h2 class="h3 mb-3 font-weight-normal">Please Sign In</h2>
@@ -98,7 +86,7 @@ export default {
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Ultra&display=swap");
 * {
   font-weight: 540;
   margin: 0;
@@ -110,18 +98,12 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 96vh;
+  height: 100vh;
 }
 
-#flex {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+div#name.name {
 
-
-.name {
-  font-family: "Bungee Spice";
+  font-family: "Homemade Apple", cursive;
   font-size: 30px;
   background: #1b1b1b;
   border-radius: 40px;
@@ -130,16 +112,21 @@ export default {
   padding: 20px;
   color: white;
   border: 2px solid white;
-  width: 440px;
-  height: 350px;
-  top: calc(50% - 175px);
-  left: calc(50% - 125px);
-  background: inherit;
-  border-radius: 2px;
-  overflow: hidden;
+  width: 550px;
+  height: 150px;
+  font-family: "Homemade Apple", cursive;
+  background: pink;
+  background: #b86b77;
+  background: -webkit-linear-gradient(top left, #b86b77 0%, #eabfb9 100%);
+  background: -moz-linear-gradient(top left, #b86b77 0%, #eabfb9 100%);
+  background: -o-linear-gradient(top left, #b86b77 0%, #eabfb9 100%);
+  background: linear-gradient(to bottom right, #b86b77 0%, #eabfb9 100%);
+  background-image: linear-gradient(to bottom right, #fcc200 10%, #da9100 80%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.name:after {
+/* .name:after {
   content: "";
   width: 300px;
   height: 300px;
@@ -153,7 +140,7 @@ export default {
   bottom: 0;
   box-shadow: inset 0 0 0 200px rgba(8, 12, 255, 0.05);
   filter: blur(10px);
-}
+} */
 
 .information {
   font-size: 30px;
@@ -169,35 +156,19 @@ export default {
 
 #login {
   color: black;
-  display: flex;
   justify-content: center;
 }
 
 .form-signin {
-  position: relative;
-  width: 440px;
-  height: 350px;
-  top: calc(50% - 175px);
-  left: calc(50% - 125px);
-  background: inherit;
-  border-radius: 2px;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  border-radius: 15px;
+  background: #fff;
+  padding: 20px;
+  margin: 0 auto;
 }
-.form-signin:after{
- content: '';
- width: 300px;
- height: 300px;
- background: inherit; 
- position: absolute;
- left: -25px;
- left: position;
- right: 0;
- top: -25px;  
- top: position;
- bottom: 0;
- box-shadow: inset 0 0 0 200px rgba(255,255,255,0.05);
- filter: blur(10px);
-}
+
 
 .h3 {
   text-align: center;
@@ -256,73 +227,72 @@ input {
 }
 @media (max-width: 550px) {
   .name {
-  display: flex;
-  flex-shrink: 1;
-  font-size: 25px;
+    display: flex;
+    flex-shrink: 1;
+    font-size: 25px;
   }
 
-.information {
-  display: flex;
-  font-size: smaller;
-  width: 300px;
-}
+  .information {
+    display: flex;
+    font-size: smaller;
+    width: 300px;
+  }
 
-#login {
-  display: flex;
-  justify-content: center;
-}
+  #login {
+    display: flex;
+    justify-content: center;
+  }
 
-.form-signin {
-  border-radius: 15px;
-  padding: 20px;
-  margin: 0 auto;
-  width: 300px;
-}
+  .form-signin {
+    border-radius: 15px;
+    padding: 20px;
+    margin: 0 auto;
+    width: 300px;
+  }
 
-.h3 {
-  text-align: center;
-  font-size: 20px;
-  padding: 20px 20px 0;
-  margin: 0;
-}
+  .h3 {
+    text-align: center;
+    font-size: 20px;
+    padding: 20px 20px 0;
+    margin: 0;
+  }
 
-.form-control {
-  padding: 15px 15px 2px;
-  margin: 15px 15px 0;
-  font-size: 10px;
-  padding-bottom: 20px;
-}
+  .form-control {
+    padding: 15px 15px 2px;
+    margin: 15px 15px 0;
+    font-size: 10px;
+    padding-bottom: 20px;
+  }
 
-input {
-  border: 0;
-  color: black;
-  font: inherit;
-  margin: 0;
-  outline: 0;
-  padding: 0;
-  
-}
+  input {
+    border: 0;
+    color: black;
+    font: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+  }
 
-.form-control[type="text"]:focus {
-  outline: none;
-}
+  .form-control[type="text"]:focus {
+    outline: none;
+  }
 
-.form-control[type="password"]:focus {
-  outline: none;
-}
+  .form-control[type="password"]:focus {
+    outline: none;
+  }
 
-.sign-in-button {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  padding: 10px 10px 10px;
-  margin: 15px 15px 0;
-  border-radius: 3px;
-  font-size: 15px;
-}
+  .sign-in-button {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 10px 10px 10px;
+    margin: 15px 15px 0;
+    border-radius: 3px;
+    font-size: 15px;
+  }
 
-.need-account {
-  font-size: 10px;
-}
+  .need-account {
+    font-size: 10px;
+  }
 }
 </style>
