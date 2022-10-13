@@ -18,7 +18,6 @@ export default {
 </script>
 
 <style>
-
 * {
   margin: 0;
   padding: 0;
@@ -27,16 +26,15 @@ export default {
 html {
   width: 100vw;
   height: 100vh;
-
 }
 
 body {
   display: flex;
   background: #50a3a2;
-background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
-background: -moz-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
-background: -o-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
-background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+  background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+  background: -moz-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+  background: -o-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+  background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
   height: 100%;
   font-family: Arial, Helvetica;
   letter-spacing: 0.02em;
@@ -44,41 +42,46 @@ background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
   -webkit-font-smoothing: antialiased;
 }
 .bg-bubbles {
-position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	
-	z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  z-index: 1;
 }
 
-	li{
-		position: absolute;
-		list-style: none;
-		display: block;
-		width: 40px;
-		height: 40px;
-		background-color: fade(white, 15%);
-		bottom: -160px;
-		
-		-webkit-animation: square 25s infinite;
-		animation:         square 25s infinite;
-		
-		-webkit-transition-timing-function: linear;
-		transition-timing-function: linear;
-  }
+li {
+  position: absolute;
+  list-style: none;
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-color: fade(white, 15%);
+  bottom: -160px;
 
-  
+  -webkit-animation: square 25s infinite;
+  animation: square 25s infinite;
 
+  -webkit-transition-timing-function: linear;
+  transition-timing-function: linear;
+}
 
 @-webkit-keyframes square {
-  0%   { transform: translateY(0); }
-  100% { transform: translateY(-700px) rotate(600deg); }
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-700px) rotate(600deg);
+  }
 }
 @keyframes square {
-  0%   { transform: translateY(0); }
-  100% { transform: translateY(-700px) rotate(600deg); }
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-700px) rotate(600deg);
+  }
 }
 
 #sidebar {
@@ -110,17 +113,18 @@ position: absolute;
 }
 
 @mixin dots($count) {
-$text-shadow: ();
+  $text-shadow: ();
   @for $i from 0 through $count {
     $text-shadow: $text-shadow,
-                 (-.5+(random()) * 3) + em
-                 (-.5+(random()) * 3) + em
-                 7px
-                 hsla(random() * 360, 100%, 50%,.9);
+      (-0.5+ (random()) * 3) +
+        em
+        (-0.5+ (random()) * 3) +
+        em
+        7px
+        hsla(random() * 360, 100%, 50%, 0.9);
   }
   text-shadow: $text-shadow;
 }
-
 
 .site-title:after {
   content: "";
@@ -141,6 +145,5 @@ $text-shadow: ();
 #app {
   height: 100vh;
   width: 200vh;
-  
 }
 </style>
