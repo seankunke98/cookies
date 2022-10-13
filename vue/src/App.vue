@@ -1,13 +1,14 @@
 <template>
-  <div>
+  <div id="app">
+    <div id="sidebar">
+      <h1 id="site-title">ReelDB</h1>
+    </div>
     <router-view />
   </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style>

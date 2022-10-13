@@ -58,8 +58,8 @@
     </div>
   </div>
 </template>
-  
-  <script>
+
+<script>
 import authService from "../services/AuthService";
 
 export default {
@@ -96,8 +96,8 @@ export default {
   },
 };
 </script>
-  
-  <style scoped>
+
+<style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap");
 
 * {
@@ -119,6 +119,9 @@ export default {
   flex-direction: column;
   align-items: center;
 }
+
+
+
 
 .name {
   font-family: "Bungee Spice";
@@ -215,73 +218,73 @@ input {
 }
 @media (max-width: 550px) {
   .name {
-    display: flex;
-    flex-shrink: 1;
-    font-size: 25px;
+  display: flex;
+  flex-shrink: 1;
+  font-size: 25px;
   }
 
-  .information {
-    display: flex;
-    font-size: smaller;
-    width: 300px;
-  }
+.information {
+  display: flex;
+  font-size: smaller;
+  width: 300px;
+}
 
-  #login {
-    display: flex;
-    justify-content: center;
-  }
+#login {
+  display: flex;
+  justify-content: center;
+}
 
-  .form-signin {
-    border-radius: 15px;
-    padding: 20px;
-    margin: 0 auto;
-    width: 300px;
-  }
+.form-signin {
+  border-radius: 15px;
+  padding: 20px;
+  margin: 0 auto;
+  width: 300px;
+}
 
-  .h3 {
-    text-align: center;
-    font-size: 20px;
-    padding: 20px 20px 0;
-    margin: 0;
-  }
+.h3 {
+  text-align: center;
+  font-size: 20px;
+  padding: 20px 20px 0;
+  margin: 0;
+}
 
-  .form-control {
-    padding: 15px 15px 2px;
-    margin: 15px 15px 0;
-    font-size: 10px;
-    padding-bottom: 20px;
-  }
+.form-control {
+  padding: 15px 15px 2px;
+  margin: 15px 15px 0;
+  font-size: 10px;
+  padding-bottom: 20px;
+}
 
-  input {
-    border: 0;
-    color: black;
-    font: inherit;
-    margin: 0;
-    outline: 0;
-    padding: 0;
-  }
+input {
+  border: 0;
+  color: black;
+  font: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  
+}
 
-  .form-control[type="text"]:focus {
-    outline: none;
-  }
+.form-control[type="text"]:focus {
+  outline: none;
+}
 
-  .form-control[type="password"]:focus {
-    outline: none;
-  }
+.form-control[type="password"]:focus {
+  outline: none;
+}
 
-  .sign-in-button {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    padding: 10px 10px 10px;
-    margin: 15px 15px 0;
-    border-radius: 3px;
-    font-size: 15px;
-  }
+.sign-in-button {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 10px 10px 10px;
+  margin: 15px 15px 0;
+  border-radius: 3px;
+  font-size: 15px;
+}
 
-  .need-account {
-    font-size: 10px;
-  }
+.need-account {
+  font-size: 10px;
+}
 }
 </style>
-  
