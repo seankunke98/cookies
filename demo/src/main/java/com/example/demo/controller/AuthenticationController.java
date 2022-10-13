@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @CrossOrigin
 public class AuthenticationController {
 
-    @Autowired
+
     private final TokenProvider tokenProvider;
     private final AuthenticationManagerBuilder authenticationManagerBuilder;
     private UserDao userDao;
