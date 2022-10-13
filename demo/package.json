@@ -24,7 +24,6 @@
     "url": "https://github.com/seankunke98/cookies-by-kels/issues"
   },
   "homepage": "https://github.com/seankunke98/cookies-by-kels#readme",
-
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-brands-svg-icons": "^6.2.0",
@@ -35,6 +34,7 @@
     "core-js": "^3.9.1",
     "flickity": "^3.0.0",
     "font-awesome-animation": "^1.1.1",
+    "jsonwebtoken": "^8.5.1",
     "react-draggable": "^4.4.5",
     "vue": "^2.6.12",
     "vue-agile": "^2.0.0",
@@ -63,4 +63,3 @@
     "vuetify-loader": "^1.7.0"
   }
 }
-

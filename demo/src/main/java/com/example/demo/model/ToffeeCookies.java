@@ -5,7 +5,7 @@ public class ToffeeCookies implements Product {
     private String productName = "Pumpkin Spice Toffee Cookies";
     private double price = 2.5;
     private String description = "";
-    private int minQuantity = 12;
+
 
     @Override
     public String name() {
@@ -18,8 +18,8 @@ public class ToffeeCookies implements Product {
     }
 
     @Override
-    public int minQuantity() {
-        return minQuantity;
+    public int productId() {
+        return 0;
     }
 
     @Override

@@ -7,18 +7,28 @@ public class Brownies implements Product {
     private String productName = "Brownies w/ Cream Cheese Icing";
     private double price = 3;
     private String description = "";
-    private int minQuantity = 6;
+    private int productId;
 
 
-    public Brownies(String productName, double price, String description, int minQuantity) {
+
+    public Brownies(int productId, String productName, double price, String description, int quantity) {
         this.productName = productName;
         this.price = price;
         this.description = description;
-        this.minQuantity = minQuantity;
+        this.productId = productId;
+
     }
 
     public Brownies() {
 
+    }
+
+    public int getProductId() {
+        return productId;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 
     @Override
@@ -32,8 +42,8 @@ public class Brownies implements Product {
     }
 
     @Override
-    public int minQuantity() {
-        return minQuantity;
+    public int productId() {
+        return this.productId;
     }
 
     @Override

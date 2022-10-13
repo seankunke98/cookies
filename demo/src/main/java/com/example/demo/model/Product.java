@@ -6,7 +6,9 @@ public interface Product {
 
     String name();
     double price();
-    int minQuantity();
+
+
+    int productId();
     String description();
 
 

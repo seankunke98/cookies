@@ -8,10 +8,41 @@ public class Order {
     private String orderSpecialNotes;
     private boolean allergyFreeOrder;
     private String orderStatus;
+    private int quantity;
+    private double orderAmount;
 
+    public Order() {
+    }
+
+    public Order(int orderId, String customerName, String orderDescription, String orderSpecialNotes, boolean allergyFreeOrder, String orderStatus, int quantity, double orderAmount) {
+        this.orderId = orderId;
+        this.customerName = customerName;
+        this.orderDescription = orderDescription;
+        this.orderSpecialNotes = orderSpecialNotes;
+        this.allergyFreeOrder = allergyFreeOrder;
+        this.orderStatus = orderStatus;
+        this.quantity = quantity;
+        this.orderAmount = orderAmount;
+    }
 
     public int getOrderId() {
         return orderId;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public double getOrderAmount() {
+        return orderAmount;
+    }
+
+    public void setOrderAmount(double orderAmount) {
+        this.orderAmount = orderAmount;
     }
 
     public void setOrderId(int orderId) {

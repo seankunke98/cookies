@@ -22,10 +22,13 @@ public class JdbcOrderDao implements OrderDao {
     @Override
     public List<Order> getOrders() {
         List<Order> orders = new ArrayList<>();
-        String sql = "SELECT order_id, customer_name, order_amount, order_details, order_quantity FROM orders";
-        SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql, Order.class, );
+        String sql = "SELECT order_id, customer_name, order_amount, order_description, order_quantity FROM orders";
+        SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql);
+        while(rowSet.next()){
+            orders.add(mapRowToOrder(rowSet));
+        }
 
-        return null;
+        return orders;
     }
 
     @Override
@@ -40,5 +43,13 @@ public class JdbcOrderDao implements OrderDao {
 
     private Order mapRowToOrder(SqlRowSet rowSet) {
         Order order = new Order();
+        order.setOrderId(rowSet.getInt("order_id"));
+        order.setAllergyFreeOrder(rowSet.getBoolean("allergy_free"));
+        order.setOrderStatus(rowSet.getString("order_status"));
+        order.setOrderDescription(rowSet.getString("order_description"));
+        order.setOrderSpecialNotes(rowSet.getString("special_notes"));
+        order.setQuantity(rowSet.getInt("order_quantity"));
+        order.setCustomerName(rowSet.getString("customer_name"));
+        return order;
     }
 }
