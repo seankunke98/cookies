@@ -32,13 +32,7 @@ html {
 
 body {
   display: flex;
-
-  background: -webkit-linear-gradient(bottom left, #f0a37a 0%, #f3c9e3 98%);
-  background: -moz-linear-gradient(bottom left, #f0a37a 0%, #f3c9e3 98%);
-  background: -o-linear-gradient(bottom left, #f0a37a 0%, #f3c9e3 98%);
-  background: -ms-linear-gradient(bottom left, #f0a37a 0%, #f3c9e3 98%);
-  background: linear-gradient(to top right, #f0a37a 0%, #f3c9e3 98%);
-
+  background: linear-gradient(to top right, #f0a37a 0%, #f3c9e3 98%); 
   height: 100%;
   font-family: Arial, Helvetica;
   letter-spacing: 0.02em;
@@ -51,10 +45,6 @@ body {
   font-family: "Homemade Apple", cursive;
   background: #1b1b1b;
   display: flex;
-  background: -webkit-linear-gradient(bottom left, #f0a37a 0%, #f3c9e3 98%);
-  background: -moz-linear-gradient(bottom left, #f0a37a 0%, #f3c9e3 98%);
-  background: -o-linear-gradient(bottom left, #f0a37a 0%, #f3c9e3 98%);
-  background: -ms-linear-gradient(bottom left, #f0a37a 0%, #f3c9e3 98%);
   background: linear-gradient(to top right, #f0a37a 0%, #f3c9e3 98%);
 }
 </style>

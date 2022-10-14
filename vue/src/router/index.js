@@ -5,6 +5,7 @@ import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import Home from '../views/Home.vue'
+import Playground from '../views/Playground.vue'
 
 Vue.use(Router)
 
@@ -42,6 +43,14 @@ const router = new Router({
             component: Register,
             meta: {
                 requiresAuth: false
+            }
+        },
+        {
+            path: "/playground",
+            name: "playground",
+            component: Playground,
+            meta: {
+                requiresAuth: true
             }
         }
     ]

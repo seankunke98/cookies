@@ -18,8 +18,8 @@
           >
         </li>
         <li>
-          <router-link id="list" v-bind:to="{ name: 'my-movies' }"
-            >My Movies</router-link
+          <router-link id="list" v-bind:to="{ name: 'playground' }"
+            >playground page</router-link
           >
         </li>
         <li>
@@ -28,6 +28,10 @@
             v-bind:to="{ name: 'logout' }"
             v-if="$store.state.token != ''"
             >Logout</router-link
+          >
+        </li>
+        <li><router-link id="list" v-bind:to="{ name: 'my-movies' }"
+            >My Movies</router-link
           >
         </li>
       </div>
