@@ -1,51 +1,44 @@
 <template>
-  <div id="app">
+    <div id="app">
     <div id="sidebar">
-      <nav-menu id="menu" />
-      <h1 id="site-title">Cookies by Kels</h1>
+      <navMenu id="menu" />
+      <h1 id="site-title"> Cookies by Kels </h1>
     </div>
     <router-view />
   </div>
 </template>
 
 <script>
-import NavMenu from "../src/components/NavMenu.vue";
+import navMenu from "../src/components/NavMenu.vue";
 export default {
-  components: {
-    NavMenu,
+ components: {
+    navMenu,
   },
 };
 </script>
-
-<style>
-@import url("https://fonts.googleapis.com/css2?family=Allura&family=Homemade+Apple&family=Ultra&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Ultra&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  width: 100vw;
-  height: 100vh;
-}
-
-body {
-  display: flex;
-  background: linear-gradient(to top right, #f0a37a 0%, #f3c9e3 98%); 
-  height: 100%;
-  font-family: Arial, Helvetica;
-  letter-spacing: 0.02em;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-}
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap");
 
 #sidebar {
-  width: 100vw;
-  font-family: "Homemade Apple", cursive;
   background: #1b1b1b;
+  background-image: linear-gradient(to bottom right, #fcc200 10%, #da9100 80%);
+}
+
+#menu {
   display: flex;
-  background: linear-gradient(to top right, #f0a37a 0%, #f3c9e3 98%);
+  justify-content: flex-start;
+  background-color: #1b1b1b;
+  width: 100%;
+}
+#site-title {
+  font-family: "Homemade Apple", cursive;
+  display: flex;
+  justify-content: center;
+}
+
+#app {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to bottom right, #b86b77 0%, #eabfb9 100%);
 }
 </style>
-

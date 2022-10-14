@@ -20,24 +20,12 @@ export default {
 </script>
 
 <style scoped>
-* {
-  font-family: "Allerta Stencil";
-  margin: 0;
-  padding: 0;
-}
-
-#flex {
+div#flex {
   display: flex;
-  flex-direction: column;
-  align-content: stretch;
-  height: 96vh;
+  justify-content: center;
 }
 
 h1.header {
-  display: flex;
-  color: white;
-  justify-content: center;
- 
-  background: transparent;
+  font-family: 'Homemade Apple', cursive;
 }
 </style>

@@ -1,174 +1,70 @@
 <template>
-  <div class="navbar">
-    <div class="container nav-container" v-if="$store.state.token != ''">
-      <input class="checkbox" type="checkbox" />
-      <div class="hamburger">
-        <span class="line" id="line-one"></span>
-        <span class="line" id="line-two"></span>
-        <span class="line line3" id="line-three"></span>
-      </div>
-      <div class="logo"></div>
-      <div class="menu-list">
-        <li>
-          <router-link id="list" v-bind:to="{ name: 'home' }">Home</router-link>
-        </li>
-        <li>
-          <router-link id="list" v-bind:to="{ name: 'movies' }"
-            >Browse</router-link
-          >
-        </li>
-        <li>
-          <router-link id="list" v-bind:to="{ name: 'playground' }"
-            >playground page</router-link
-          >
-        </li>
-        <li>
-          <router-link
-            id="list"
-            v-bind:to="{ name: 'logout' }"
-            v-if="$store.state.token != ''"
-            >Logout</router-link
-          >
-        </li>
-        <li><router-link id="list" v-bind:to="{ name: 'my-movies' }"
-            >My Movies</router-link
-          >
-        </li>
-      </div>
-    </div>
-  </div>
+  <v-container id="menu">
+    <v-navigation-drawer
+      v-model="drawer"
+      :expand-on-hover="expandOnHover"
+      :src="bg"
+      absolute
+      dark
+    >
+      <v-list dense nav class="py-0">
+        <v-list-item two-line :class="miniVariant && 'px-0'">
+
+
+          <v-list-item-content>
+            <v-list-item-title>Cookies by Kels</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-divider></v-divider>
+
+        <v-list-item v-for="item in items" :key="item.title" link>
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+  </v-container>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      drawer: true,
+      items: [
+        { title: "Dashboard", icon: "mdi-view-dashboard" },
+        { title: "Photos", icon: "mdi-image" },
+        { title: "About", icon: "mdi-help-box" },
+      ],
+      color: "primary",
+      colors: ["primary", "blue", "success", "red", "teal"],
+      right: false,
+      permanent: true,
+      miniVariant: false,
+      expandOnHover: true,
+      background: false,
+    };
+  },
+  computed: {
+    bg() {
+      return this.background
+        ? "https://cdn.vuetifyjs.com/images/backgrounds/bg-2.jpg"
+        : undefined;
+    },
+  },
+};
 </script>
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 64px;
-}
-
-.menu-list {
-  display: flex;
-  background: #1b1b1b;
-  font-family: "Allerta Stencil";
-  position: fixed;
-  top: 0;
-  width: 250px;
-}
-
-.navbar .nav-container li {
-  list-style: none;
-}
-
-.navbar .nav-container #list {
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  font-size: 1.2rem;
-  padding: 0.7rem;
-}
-
-.navbar .nav-container #list:hover {
-  font-weight: bolder;
-}
-
-.nav-container {
-  display: block;
-  position: relative;
-  height: 60px;
-}
-
-.nav-container .checkbox {
-  position: fixed;
-  display: block;
-  height: 32px;
-  width: 32px;
-  top: 20px;
-  left: 20px;
-  z-index: 3;
-  opacity: 0;
-  cursor: pointer;
-  padding: 100px;
-}
-
-.nav-container .hamburger {
-  display: block;
-  height: 26px;
-  width: 32px;
-  position: absolute;
-  top: 17px;
-  left: 20px;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.nav-container .hamburger .line {
-  display: block;
-  height: 4px;
-  width: 100%;
-  border-radius: 10px;
-  background: white;
-}
-
-#line-one {
-  transform-origin: 0% 0%;
-  transition: transform 0.4s ease-in-out;
-}
-
-#line-two {
-  transition: transform 0.2s ease-in-out;
-}
-
-#line-three {
-  transform-origin: 0% 100%;
-  transition: transform 0.4s ease-in-out;
-}
-
-.menu-list {
-  padding-top: 120px;
-  height: 101vh;
-  transform: translate(-150%);
-  display: flex;
-  flex-direction: column;
-  margin-left: -40px;
-  padding-left: 50px;
-  transition: transform 0.5s ease-in-out;
-  text-align: center;
-}
-
-.menu-list li {
-  margin-bottom: 1.2rem;
-  font-size: 1.5rem;
-}
-.nav-container input[type="checkbox"]:checked ~ .menu-list {
-  transform: translateX(0);
-}
-
-.nav-container input[type="checkbox"]:checked ~ .hamburger #line-one {
-  transform: rotate(45deg);
-}
-
-.nav-container input[type="checkbox"]:checked ~ .hamburger #line-two {
-  transform: scaleY(0);
-}
-
-.nav-container input[type="checkbox"]:checked ~ .hamburger #line-three {
-  transform: rotate(-45deg);
-}
-.watch-filled {
-  color: aqua;
+<style scoped>
+.menu {
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Courier New', Courier, monospace;
 }
 </style>

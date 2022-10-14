@@ -80,8 +80,18 @@ export default {
           }
         });
     },
-  },
-};
+    created: function () {
+      this.button.click(function(event){
+		 event.preventDefault();
+	 
+	 $('form').fadeOut(500);
+	 $('.wrapper').addClass('form-success');
+})  
+    }
+    
+  }
+}
+  
 </script>
 
 <style scoped>
@@ -102,7 +112,6 @@ export default {
 }
 
 div#name.name {
-
   font-family: "Homemade Apple", cursive;
   font-size: 30px;
   background: #1b1b1b;
@@ -168,7 +177,6 @@ div#name.name {
   padding: 20px;
   margin: 0 auto;
 }
-
 
 .h3 {
   text-align: center;
