@@ -1,10 +1,9 @@
 <template>
   <div id="app">
-
     <div id="sidebar">
-    <nav-menu id="menu" />
-    <h1 id="site-title">Cookies by Kels</h1>
-  </div>
+      <nav-menu id="menu" />
+      <h1 id="site-title">Cookies by Kels</h1>
+    </div>
     <router-view />
   </div>
 </template>
@@ -34,11 +33,11 @@ html {
 body {
   display: flex;
 
-background: -webkit-linear-gradient(bottom left, #f0a37a 0%, #f3c9e3 98%);
-background: -moz-linear-gradient(bottom left, #f0a37a 0%, #f3c9e3 98%);
-background: -o-linear-gradient(bottom left, #f0a37a 0%, #f3c9e3 98%);
-background: -ms-linear-gradient(bottom left, #f0a37a 0%, #f3c9e3 98%);
-background: linear-gradient(to top right, #f0a37a 0%, #f3c9e3 98%);
+  background: -webkit-linear-gradient(bottom left, #f0a37a 0%, #f3c9e3 98%);
+  background: -moz-linear-gradient(bottom left, #f0a37a 0%, #f3c9e3 98%);
+  background: -o-linear-gradient(bottom left, #f0a37a 0%, #f3c9e3 98%);
+  background: -ms-linear-gradient(bottom left, #f0a37a 0%, #f3c9e3 98%);
+  background: linear-gradient(to top right, #f0a37a 0%, #f3c9e3 98%);
 
   height: 100%;
   font-family: Arial, Helvetica;
@@ -51,13 +50,12 @@ background: linear-gradient(to top right, #f0a37a 0%, #f3c9e3 98%);
   width: 100vw;
   font-family: "Homemade Apple", cursive;
   background: #1b1b1b;
-display: flex;
-
+  display: flex;
   background: -webkit-linear-gradient(bottom left, #f0a37a 0%, #f3c9e3 98%);
-background: -moz-linear-gradient(bottom left, #f0a37a 0%, #f3c9e3 98%);
-background: -o-linear-gradient(bottom left, #f0a37a 0%, #f3c9e3 98%);
-background: -ms-linear-gradient(bottom left, #f0a37a 0%, #f3c9e3 98%);
-background: linear-gradient(to top right, #f0a37a 0%, #f3c9e3 98%);
+  background: -moz-linear-gradient(bottom left, #f0a37a 0%, #f3c9e3 98%);
+  background: -o-linear-gradient(bottom left, #f0a37a 0%, #f3c9e3 98%);
+  background: -ms-linear-gradient(bottom left, #f0a37a 0%, #f3c9e3 98%);
+  background: linear-gradient(to top right, #f0a37a 0%, #f3c9e3 98%);
 }
 </style>
 
