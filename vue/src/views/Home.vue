@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-      Welcome, {{ $store.state.user.username }}! 
+    <div id="flex">
+    <h1 class="header">Welcome, {{ $store.state.user.username }}!</h1>
+  </div>
   </div>
 </template>
 
@@ -18,9 +20,24 @@ export default {
 </script>
 
 <style scoped>
+* {
+  font-family: "Allerta Stencil";
+  margin: 0;
+  padding: 0;
+}
 
+#flex {
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  height: 96vh;
+}
 
-
-
-
+h1.header {
+  display: flex;
+  color: white;
+  justify-content: center;
+ 
+  background: transparent;
+}
 </style>

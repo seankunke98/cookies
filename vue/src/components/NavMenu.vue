@@ -1,93 +1,170 @@
 <template>
-  <div class="nav-bar">
-    <v-card class="overflow-hidden">
-    <v-app-bar
-      absolute
-      color="#6A76AB"
-      dark
-      shrink-on-scroll
-      prominent
-      src="https://picsum.photos/1920/1080?random"
-      fade-img-on-scroll
-      scroll-target="#scrolling-techniques-4"
-    >
-      <template v-slot:img="{ props }">
-        <v-img
-          v-bind="props"
-          gradient="to top right, rgba(100,115,201,.7), rgba(25,32,72,.7)"
-        ></v-img>
-      </template>
-
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
-
-      <v-toolbar-title>Title</v-toolbar-title>
-
-      <v-spacer></v-spacer>
-
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-
-      <v-menu
-        bottom
-        left
-      >
-        <template v-slot:activator="{ on, attrs }">
-          <v-btn
-            icon
-            color="yellow"
-            v-bind="attrs"
-            v-on="on"
+  <div class="navbar">
+    <div class="container nav-container" v-if="$store.state.token != ''">
+      <input class="checkbox" type="checkbox" />
+      <div class="hamburger">
+        <span class="line" id="line-one"></span>
+        <span class="line" id="line-two"></span>
+        <span class="line line3" id="line-three"></span>
+      </div>
+      <div class="logo"></div>
+      <div class="menu-list">
+        <li>
+          <router-link id="list" v-bind:to="{ name: 'home' }">Home</router-link>
+        </li>
+        <li>
+          <router-link id="list" v-bind:to="{ name: 'movies' }"
+            >Browse</router-link
           >
-            <v-icon>mdi-dots-vertical</v-icon>
-          </v-btn>
-        </template>
-
-        <v-list>
-          <v-list-item
-            v-for="(item, i) in items"
-            :key="i"
+        </li>
+        <li>
+          <router-link id="list" v-bind:to="{ name: 'my-movies' }"
+            >My Movies</router-link
           >
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item>
-        </v-list>
-      </v-menu>
-
-      <template v-slot:extension>
-        <v-tabs align-with-title>
-          <v-tab>Tab 1</v-tab>
-          <v-tab>Tab 2</v-tab>
-          <v-tab>Tab 3</v-tab>
-        </v-tabs>
-      </template>
-    </v-app-bar>
-    <v-sheet
-      id="scrolling-techniques-4"
-      class="overflow-y-auto"
-      max-height="600"
-    >
-      <v-container style="height: 1000px;"></v-container>
-    </v-sheet>
-  </v-card>
-</div>
-
-</template> 
+        </li>
+        <li>
+          <router-link
+            id="list"
+            v-bind:to="{ name: 'logout' }"
+            v-if="$store.state.token != ''"
+            >Logout</router-link
+          >
+        </li>
+      </div>
+    </div>
+  </div>
+</template>
 
 <script>
-export default {
-  name: "nav-menu",
-  data: () => ({
-      drawer: false,
-    }),
-  }
-
+export default {};
 </script>
 
 <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+.menu-list {
+  display: flex;
+  background: #1b1b1b;
+  font-family: "Allerta Stencil";
+  position: fixed;
+  top: 0;
+  width: 250px;
+}
+
+.navbar .nav-container li {
+  list-style: none;
+}
+
+.navbar .nav-container #list {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 0.7rem;
+}
+
+.navbar .nav-container #list:hover {
+  font-weight: bolder;
+}
+
+.nav-container {
+  display: block;
+  position: relative;
+  height: 60px;
+}
+
+.nav-container .checkbox {
+  position: fixed;
+  display: block;
+  height: 32px;
+  width: 32px;
+  top: 20px;
+  left: 20px;
+  z-index: 3;
+  opacity: 0;
+  cursor: pointer;
+  padding: 100px;
+}
+
+.nav-container .hamburger {
+  display: block;
+  height: 26px;
+  width: 32px;
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-container .hamburger .line {
+  display: block;
+  height: 4px;
+  width: 100%;
+  border-radius: 10px;
+  background: white;
+}
+
+#line-one {
+  transform-origin: 0% 0%;
+  transition: transform 0.4s ease-in-out;
+}
+
+#line-two {
+  transition: transform 0.2s ease-in-out;
+}
+
+#line-three {
+  transform-origin: 0% 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.menu-list {
+  padding-top: 120px;
+  height: 101vh;
+  transform: translate(-150%);
+  display: flex;
+  flex-direction: column;
+  margin-left: -40px;
+  padding-left: 50px;
+  transition: transform 0.5s ease-in-out;
+  text-align: center;
+}
+
+.menu-list li {
+  margin-bottom: 1.2rem;
+  font-size: 1.5rem;
+}
+.nav-container input[type="checkbox"]:checked ~ .menu-list {
+  transform: translateX(0);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger #line-one {
+  transform: rotate(45deg);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger #line-two {
+  transform: scaleY(0);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger #line-three {
+  transform: rotate(-45deg);
+}
+.watch-filled {
+  color: aqua;
+}
 </style>

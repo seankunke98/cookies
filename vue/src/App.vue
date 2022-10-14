@@ -1,6 +1,10 @@
 <template>
   <div id="app">
+
+    <div id="sidebar">
     <nav-menu id="menu" />
+    <h1 id="site-title">Cookies by Kels</h1>
+  </div>
     <router-view />
   </div>
 </template>
@@ -16,6 +20,7 @@ export default {
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Allura&family=Homemade+Apple&family=Ultra&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ultra&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -28,11 +33,13 @@ html {
 
 body {
   display: flex;
-  background: #b86b77;
-  background: -webkit-linear-gradient(top left, #b86b77 0%, #eabfb9 100%);
-  background: -moz-linear-gradient(top left, #b86b77 0%, #eabfb9 100%);
-  background: -o-linear-gradient(top left, #b86b77 0%, #eabfb9 100%);
-  background: linear-gradient(to bottom right, #b86b77 0%, #eabfb9 100%);
+
+background: -webkit-linear-gradient(bottom left, #f0a37a 0%, #f3c9e3 98%);
+background: -moz-linear-gradient(bottom left, #f0a37a 0%, #f3c9e3 98%);
+background: -o-linear-gradient(bottom left, #f0a37a 0%, #f3c9e3 98%);
+background: -ms-linear-gradient(bottom left, #f0a37a 0%, #f3c9e3 98%);
+background: linear-gradient(to top right, #f0a37a 0%, #f3c9e3 98%);
+
   height: 100%;
   font-family: Arial, Helvetica;
   letter-spacing: 0.02em;
@@ -40,9 +47,17 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-#app {
+#sidebar {
   width: 100vw;
-  height: 100vh;
-}
+  font-family: "Homemade Apple", cursive;
+  background: #1b1b1b;
+display: flex;
 
+  background: -webkit-linear-gradient(bottom left, #f0a37a 0%, #f3c9e3 98%);
+background: -moz-linear-gradient(bottom left, #f0a37a 0%, #f3c9e3 98%);
+background: -o-linear-gradient(bottom left, #f0a37a 0%, #f3c9e3 98%);
+background: -ms-linear-gradient(bottom left, #f0a37a 0%, #f3c9e3 98%);
+background: linear-gradient(to top right, #f0a37a 0%, #f3c9e3 98%);
+}
 </style>
+
